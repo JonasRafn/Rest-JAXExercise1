@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    createQuote("Friends are kisses blown to us by angels");
-    createQuote("Do not take life too seriously. You will never get out of it alive");
-    createQuote("Behind every great man, is a woman rolling her eyes");
     updateQuote();
 });
 
@@ -32,7 +29,7 @@ $('#deleteQuoteButton').on('click', function () {
 function updateQuote() {
     var url = "/Rest-JAXExercise1/api/qoute";
     $.getJSON(url, function (qoute) {
-        $('#qouteOfTheDay').append('<p>' + qoute + '</p>');
+        $('#qouteOfTheDay').append('<p>' + qoute.qoute + '</p>');
     });
 }
 

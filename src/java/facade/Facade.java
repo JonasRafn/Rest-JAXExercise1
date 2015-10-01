@@ -5,7 +5,12 @@ import java.util.Map;
 
 public class Facade {
 
-    private static Map<Integer, String> qoutes = new HashMap();
+    private static Map<Integer, String> qoutes = new HashMap() {{
+        put(1,"Friends are kisses blown to us by angels");
+        put(2, "Do not take life too seriously. You will never get out of it alive");
+        put(3, "Behind every great man, is a woman rolling her eyes");
+    }
+    };
     private static int count = 1;
 
     public static void addQoute(int index, String qoute) {

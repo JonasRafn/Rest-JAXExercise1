@@ -37,7 +37,10 @@ public class RestService {
     @Produces("application/json")
     public String getRandomQoute() {
         int i = random.nextInt(Facade.getMapSize()) + 1;
-        return gson.toJson(Facade.getQoute(i));
+        JsonObject jobj = new JsonObject();
+        jobj.addProperty("qoute", Facade.getQoute(i));
+//        return gson.toJson(Facade.getQoute(i));
+        return jobj.toString();
     }
 
     @GET
